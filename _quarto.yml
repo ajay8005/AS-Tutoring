@@ -6,26 +6,14 @@ website:
   # google-analytics: G-B8G2041HSB
   sidebar:
     style: docked
-    title: "Ajay Sharma"
-    logo: assets/stat_bear.png
+    title: "AS Tutoring"
+    logo: assets/AS-Tutoring.png
     tools:
-      - icon: github
-        href: https://github.com/ajay8005
       - icon: linkedin
         href: https://linkedin.com/in/asharma2718
     contents:
       - href: index.qmd
-        text: About Me
-      - href: resume.qmd
-      - section: "Projects"
-        contents:
-          - webapp.qmd
-          - projects.qmd
-          - book.qmd
-      - section: "Berkeley Coursework"
-        contents:
-          - berkeley-coursework.qmd
-          - homework-solutions.qmd
+        text: About Us
       - href: contact.qmd
         text: "Contact & Tutoring Services"
       - href: license.qmd

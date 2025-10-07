@@ -1,43 +1,61 @@
 ---
-title: "Ajay Sharma"
-subtitle: "Double Major: Statistics & Applied Math (Data Science) • UC Berkeley ’25"
+title: "Ajay Sharma & Sahil Advani"
+subtitle: |
+  Double Major: Statistics & Applied Math (Data Science) • UC Berkeley ’25<br>
+  Double Major: Statistics & Economics • UC Davis ’24
 format:
   html:
     theme: cosmo
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
-<div style="text-align: center;">
-![](assets/gradpic.jpg){width=70% .rounded}
-</div>
+::: {style="text-align: center;"}
+![](assets/gradpic.jpg){.rounded width="70%"}
+:::
 
+## Philosophy
 
+We provide end-to-end tutoring and consulting that meets students where
+they are and moves them toward measurable results. Our work spans
+regular and Honors/AP courses, SAT/ACT preparation, college-essay
+support, and ongoing academic coaching. Every engagement begins with a
+brief diagnostic and goals conversation; from there we build a clear
+weekly plan that blends concept-first explanations with targeted
+practice, spaced-repetition review, and simple analytics—weekly
+checkpoints, timing/accuracy tracking, and milestone reflections—so
+progress is visible to students and families. For test prep, we teach
+efficient strategies, pacing, and error analysis alongside content
+mastery; for essays, we guide topic discovery, narrative structure, and
+line-level polish until the draft is submission-ready; and for academic
+coaching, we focus on systems that last—planning, note-making, and time
+management—so students learn how to learn and carry those habits into
+every class.
 
-## About Me
+## About Us
 
-I’m Ajay Sharma, a statistician and machine‐learning enthusiast who loves turning data into insight. After earning my B.A. in Statistics & Applied Mathematics (Data Science) from UC Berkeley, I’ve spent my days studying theoretical statistics and developing predictive models—including exploratory analyses of financial time series—while teaching a wide range of courses: AP Calculus BC, AP Statistics, AP Computer Science A, college‐level Multivariable Calculus, Discrete Mathematics, Probability Theory… and even chess! I firmly believe that deep comprehension arises from blending theory and application, and I’m dedicated to translating advanced technical material into an approachable, inspiring form.
+Ajay earned his B.A. in Statistics and Applied Mathematics (Data Science
+emphasis) from the University of California, Berkeley (’25). Over the
+past six years, he has taught and mentored students across AP and
+college-level math/CS, starting as a volunteer instructor in high
+school, leading review sessions at UC Berkeley, and later founding a
+peer-tutoring program that consistently lifted grades and confidence.
 
-When I’m not writing code or teaching, I work on my second book (course reader)—a dive into computational data analysis and a prelude to theoretical machine learning. Outside of work, you’ll often find me at the gym, on the running trail, or simply hanging out with friends and family. Whether I’m coaching students or planning my next data science project, I’m driven by curiosity, collaboration, and the joy of lifelong learning. Go Bears!
-
-- 🔭 Currently: Exploring statistical modeling, pedagogy, and teaching.
-- 📄 [Resume](resume.qmd) 
-- 💼 Projects: [Web Applications](webapp.qmd), [Data Science & Software](projects.qmd), [Books](books.qmd)  
-- 🎓 [Berkeley Coursework](berkeley-coursework.qmd)  
-- ✉️ [Contact Me](contact.qmd)
-
-
-
+-   🔭 Currently: Exploring pedagogy, teaching, and statistical
+    modeling.
+-   ✉️ [Contact Us](contact.qmd)
 
 <footer style="text-align:center; margin-top:3rem; font-size:2rem;">
-  <a href="resume.pdf" target="_blank"
+
+<a href="resume.pdf" target="_blank"
      style="margin:0 1rem; text-decoration:none;">
-    <i class="bi bi-file-earmark-person" title="Résumé"></i>
-  </a>
-  <a href="https://github.com/ajay8005" target="_blank"
+<i class="bi bi-file-earmark-person" title="Résumé"></i> </a>
+<a href="https://github.com/ajay8005" target="_blank"
      style="margin:0 1rem; text-decoration:none;">
-    <i class="bi bi-github" title="GitHub"></i>
-  </a>
-  <a href="https://linkedin.com/in/asharma2718" target="_blank"
+<i class="bi bi-github" title="GitHub"></i> </a>
+<a href="https://linkedin.com/in/asharma2718" target="_blank"
      style="margin:0 1rem; text-decoration:none;">
-    <i class="bi bi-linkedin" title="LinkedIn"></i>
-  </a>
+<i class="bi bi-linkedin" title="LinkedIn"></i> </a>
+
 </footer>
