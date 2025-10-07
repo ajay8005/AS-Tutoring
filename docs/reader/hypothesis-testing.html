@@ -233,25 +233,7 @@ window.Quarto = {
 <h3 data-number="2.2" class="anchored" data-anchor-id="example-the-z-test"><span class="header-section-number">2.2</span> Example: the <span class="math inline">\(Z\)</span>-test</h3>
 <p>A very common setting is that we observe some statistic <span class="math inline">\(Z(X) \sim N(\theta, 1)\)</span>, very often a summary statistic from a larger data set. If we are testing the one-sided hypothesis we might use the <em>right-tailed test</em> <span class="math inline">\(\phi_1(z) = 1\{z &gt; z_\alpha\}\)</span> that rejects for large values of <span class="math inline">\(Z\)</span>. Here <span class="math inline">\(z_\alpha = \Phi^{-1}(1-\alpha)\)</span> is the upper <span class="math inline">\(\alpha\)</span> quantile of the <span class="math inline">\(N(0,1)\)</span> distribution, and <span class="math inline">\(\Phi(z)\)</span> is the standard normal cdf.</p>
 <p>If we want to test the two-sided hypothesis we might use the <em>two-tailed test</em> <span class="math inline">\(\phi_2(z) = 1\{|z| &gt; z_{\alpha/2}\}\)</span>. Now we are rejecting for large values of the test statistic <span class="math inline">\(|Z|\)</span>. The rejection regions for these tests at level <span class="math inline">\(\alpha = 0.1\)</span> are plotted below, along with the alternative distribution when <span class="math inline">\(\theta = 2.3\)</span>. The shaded blue region shows the power of the test under the alternative.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="hypothesis-testing_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
 <p>The two tests’ power functions are plotted below for <span class="math inline">\(\alpha = 0.1\)</span>.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="hypothesis-testing_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
 <p>The power functions for both tests intersect the vertical axis <span class="math inline">\(\theta=0\)</span> at <span class="math inline">\(\alpha\)</span>, but the right-tailed test’s power function remains below <span class="math inline">\(\alpha\)</span> for all <span class="math inline">\(\theta &lt; 0\)</span> as well. Note that the right-tailed test is actually a valid test for the two-sided hypothesis, but we would be unlikely to want to use it since it has even less than <span class="math inline">\(\alpha\)</span> power to reject for negative values of <span class="math inline">\(\theta\)</span>. But this may give us a hint that it will not be possible to maximize power throughout the alternative, because the two-tailed test is in fact losing out to the right-tailed test when <span class="math inline">\(\theta &gt; 0\)</span>.</p>
 <p>For the one-sided hypothesis testing problem, however, we might hold out hope that the right-tailed test is the best for all values in the alternative (all <span class="math inline">\(\theta &gt; 0\)</span>), and indeed it is.</p>
 </section>
@@ -310,15 +292,6 @@ X \sim \text{Binom}(n,\theta) = \binom{n}{x}\theta^x(1-\theta)^{n-x}, \text{ for
 <p>For example, if <span class="math inline">\(n = 100\)</span> and <span class="math inline">\(\alpha = 0.05\)</span>, we will take <span class="math inline">\(c_\alpha = 58\)</span>, which is the <span class="math inline">\(0.95\)</span> quantile under the null. But <span class="math inline">\(\PP_{0.5}(X &gt; 58) = 0.044\)</span> instead of <span class="math inline">\(0.05\)</span>, which is the Type I error rate we asked for. As a result, we randomize at the boundary by setting <span class="math display">\[
 \gamma = \frac{0.05-0.44}{\PP_{0.5}(X = 58)} = 0.26,
 \]</span> so <span class="math inline">\(\phi^*\)</span> rejects with probability <span class="math inline">\(0.26\)</span> if <span class="math inline">\(X = 58\)</span>. The plot below shows the acceptance and rejection regions of the test on a probability mass function plot of the null distribution, with the bar at <span class="math inline">\(c_\alpha = 58\)</span> split according to the acceptance and rejection probabilities at the boundary.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="hypothesis-testing_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
 <p>In practice, we hardly ever use randomized tests. The conservative test <span class="math inline">\(\phi^*(X) = 1\{X &gt; 58\}\)</span> is also a likelihood ratio test, and indeed it is the most powerful test at its own level <span class="math inline">\(0.044\)</span>.</p>
 <p>What if instead of the alternative <span class="math inline">\(H_1:\; \theta = 0.51\)</span>, we instead read the more recent empirical paper and decided <span class="math inline">\(H_1:\; \theta = 0.508\)</span> was better? Then, following the same steps as before, the likelihood ratio statistic would be <span class="math display">\[
 \LR(X) = \left(\frac{0.492}{0.5}\right)^n \left(\frac{0.508}{0.492}\right)^X.
@@ -419,7 +392,7 @@ X_1,\ldots,X_n \simiid p_\eta(x) = e^{\eta T(x) - A(\eta)}h(x)
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/ajay8005\.github\.io\/personal-website\/");
+        var filterRegex = new RegExp("https:\/\/ajay8005\.github\.io\/AS-Tutoring\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

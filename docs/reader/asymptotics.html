@@ -289,23 +289,10 @@ Z_j = \frac{\hat\beta_j - \beta_j}{\hat\sigma_j} \approx N(0,1), \quad \text{ fo
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="do">## "True" Fisher information</span></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">colMeans</span>(sigma.hat<span class="sc">^</span><span class="dv">2</span>))</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(beta.hat[,<span class="dv">2</span>], <span class="at">freq=</span><span class="cn">FALSE</span>, <span class="at">breaks=</span><span class="dv">50</span>, <span class="at">main =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">"Simulated distribution of "</span>, <span class="fu">hat</span>(beta)[<span class="dv">1</span>])), <span class="at">xlab=</span><span class="fu">expression</span>(<span class="fu">hat</span>(beta)[<span class="dv">1</span>]))</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x, <span class="at">mean =</span> beta[<span class="dv">2</span>], <span class="at">sd =</span> sigma[<span class="dv">2</span>]), <span class="at">add=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="asymptotics_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>((beta.hat[,<span class="dv">2</span>] <span class="sc">-</span> beta[<span class="dv">2</span>])<span class="sc">/</span>sigma.hat[,<span class="dv">2</span>], <span class="at">freq=</span><span class="cn">FALSE</span>, <span class="at">breaks=</span><span class="dv">30</span>, <span class="at">main =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">"Simulated distribution of "</span>, Z[<span class="dv">1</span>] <span class="sc">==</span> (<span class="fu">hat</span>(beta)[<span class="dv">1</span>]<span class="sc">-</span>beta[<span class="dv">1</span>])<span class="sc">/</span><span class="fu">hat</span>(sigma)[<span class="dv">1</span>])), <span class="at">xlab=</span><span class="fu">expression</span>(Z[<span class="dv">1</span>]))</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x), <span class="at">add=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="asymptotics_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x, <span class="at">mean =</span> beta[<span class="dv">2</span>], <span class="at">sd =</span> sigma[<span class="dv">2</span>]), <span class="at">add=</span><span class="cn">TRUE</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>((beta.hat[,<span class="dv">2</span>] <span class="sc">-</span> beta[<span class="dv">2</span>])<span class="sc">/</span>sigma.hat[,<span class="dv">2</span>], <span class="at">freq=</span><span class="cn">FALSE</span>, <span class="at">breaks=</span><span class="dv">30</span>, <span class="at">main =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">"Simulated distribution of "</span>, Z[<span class="dv">1</span>] <span class="sc">==</span> (<span class="fu">hat</span>(beta)[<span class="dv">1</span>]<span class="sc">-</span>beta[<span class="dv">1</span>])<span class="sc">/</span><span class="fu">hat</span>(sigma)[<span class="dv">1</span>])), <span class="at">xlab=</span><span class="fu">expression</span>(Z[<span class="dv">1</span>]))</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x), <span class="at">add=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>These results about the MLE apply far beyond logistic regression, to a wide variety of other models. To begin to prove them, however, we will need to be more precise about what we mean by <span class="math inline">\(\hat\beta\)</span> approximately following a normal distribution, or by the estimator <span class="math inline">\(\hat\Sigma\)</span> being approximately equal to the estimand <span class="math inline">\(\Sigma(\beta)\)</span>.</p>
 </section>
@@ -500,7 +487,7 @@ Z_j = \frac{\hat\beta_j - \beta_j}{\hat\sigma_j} \approx N(0,1), \quad \text{ fo
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/ajay8005\.github\.io\/personal-website\/");
+        var filterRegex = new RegExp("https:\/\/ajay8005\.github\.io\/AS-Tutoring\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

@@ -297,13 +297,6 @@ R(\theta; \delta(\cdot)) = \EE_\theta [\, L(\theta, \delta(X)) \,] = \int L(\the
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">binom.mse</span>(x, n, <span class="dv">1</span>, <span class="dv">0</span>), <span class="at">add=</span><span class="cn">TRUE</span>, <span class="at">col=</span>palette[<span class="dv">4</span>], <span class="at">lwd=</span><span class="dv">2</span>) </span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">col=</span>palette, <span class="at">lwd=</span><span class="dv">2</span>,<span class="at">bty=</span><span class="st">"n"</span>,</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">legend=</span><span class="fu">c</span>(<span class="fu">expression</span>(delta[<span class="dv">0</span>]), <span class="fu">expression</span>(delta[<span class="dv">1</span>]), <span class="fu">expression</span>(delta[<span class="dv">2</span>]), <span class="fu">expression</span>(delta[<span class="dv">3</span>])))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="estimation_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
 </div>
 <p>If we look at the vertical axis, the MSE may appear to be very small, especially considering we only have 16 flips. But recall that an MSE of <span class="math inline">\(0.01\)</span> means that we are typically missing by about <span class="math inline">\(0.1\)</span>, while estimating a parameter that is between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>.</p>
 <section id="comparing-estimators" class="level3">
@@ -431,7 +424,7 @@ R(\theta; \delta(\cdot)) = \EE_\theta [\, L(\theta, \delta(X)) \,] = \int L(\the
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/ajay8005\.github\.io\/personal-website\/");
+        var filterRegex = new RegExp("https:\/\/ajay8005\.github\.io\/AS-Tutoring\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

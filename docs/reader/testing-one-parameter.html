@@ -206,15 +206,6 @@ c_\alpha = \min \{c \in \RR:\; \PP_{\theta_0}(T(X) &gt; c) \leq \alpha\}
 \]</span> so the optimal test rejects for large <span class="math inline">\(\sum_i T_{\theta_1}(X_i)\)</span>, where <span class="math display">\[
 T_{\theta}(x) = \begin{cases} -1 &amp; \text{ if } x \leq 0 \\ \frac{2x}{\theta} -1 &amp; \text{ if } 0 \leq x \leq \theta \\ +1 &amp;\text{ if } x \geq \theta \end{cases}.
 \]</span> We can visualize the univariate version of the test statistic <span class="math inline">\(T_{\theta}(x)\)</span> for several different values of <span class="math inline">\(\theta&gt;0\)</span>:</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="testing-one-parameter_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
 <p>Note that this test implicitly caps the influence of any single observation <span class="math inline">\(X_i\)</span>. Once <span class="math inline">\(X_i &gt; \theta_1\)</span>, it gives the same evidence in favor of <span class="math inline">\(\theta_1\)</span> and against <span class="math inline">\(\theta_0\)</span> regardless of how much it exceeds <span class="math inline">\(\theta_1\)</span>. Compare this with the sample mean, where the influence of a single observation <span class="math inline">\(X_i\)</span> is unbounded. It is easy to see that <span class="math inline">\(f(X_i)\)</span> is stochastically increasing in <span class="math inline">\(\theta\)</span> for <em>any</em> non-decreasing function <span class="math inline">\(f\)</span>, so any LRT gives a valid level-<span class="math inline">\(\alpha\)</span> test on the entire null distribution.</p>
 <p>If we take <span class="math inline">\(\theta_1\downarrow 0\)</span>, the univariate test statistic approaches <span class="math display">\[
 T_0(x) = \begin{cases} -1 &amp; \text{ if } x \leq 0\\ +1 &amp;\text{ if } x &gt; 0\end{cases},
@@ -222,15 +213,6 @@ T_0(x) = \begin{cases} -1 &amp; \text{ if } x \leq 0\\ +1 &amp;\text{ if } x &gt
 \dot{\ell}(\theta;X) = \frac{d}{d\theta} \sum_i -|X_i-\theta| = \sum_i T_0(X_i)
 \]</span> This is equivalent to rejecting for large values of <span class="math inline">\(S(X) = \#\{X_i &gt; 0\}\)</span>, simply the number of positive <span class="math inline">\(X_i\)</span> values.</p>
 <p>We can also plot the power curves for <span class="math inline">\(n = 100\)</span> and <span class="math inline">\(\alpha = 0.1\)</span>, for these tests and for the test that rejects for large values of <span class="math inline">\(\sum_i X_i\)</span>. As we see, the score test performs noticeably better than the test that rejects for large values of the sample mean <span class="math inline">\(\overline{X}\)</span>. But the LRT for <span class="math inline">\(\theta_1 = 0.2\)</span> seems to do best for this value of <span class="math inline">\(n\)</span>, since <span class="math inline">\(\theta_1 = 0.2\)</span> is a moderately hard alternative value for which the power is intermediate.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="testing-one-parameter_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
 </section>
 <section id="the-sign-test-as-a-nonparametric-test" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="the-sign-test-as-a-nonparametric-test"><span class="header-section-number">2.2</span> The sign test as a nonparametric test</h3>
@@ -252,15 +234,6 @@ T_0(x) = \begin{cases} -1 &amp; \text{ if } x \leq 0\\ +1 &amp;\text{ if } x &gt
 <p>When we test with a two-sided alternative we will generally not be able to optimize power everywhere. For example, if we test <span class="math inline">\(H_0:\; \theta = 0\)</span> vs <span class="math inline">\(H_1:\; \theta \neq 0\)</span> in the <span class="math inline">\(z\)</span>-test problem <span class="math inline">\(X \sim N(\theta,1)\)</span>, we can choose any test of the form <span class="math display">\[
 \phi_{\alpha_1}(x) = 1\{x &lt; -z_{\alpha_1}\} + 1\{x &gt; z_{\alpha - \alpha_1}\},
 \]</span> for any <span class="math inline">\(\alpha_1 \in [0,\alpha]\)</span>. We obtain the right- and left-tailed tests in the limit where <span class="math inline">\(\alpha\)</span> is <span class="math inline">\(0\)</span> or <span class="math inline">\(\alpha\)</span> respectively, and the usual symmetric two-tailed test when <span class="math inline">\(\alpha_1 = \alpha/2\)</span>.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="testing-one-parameter_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
 <p>Note that two of the three tests shown above have the undesirable property that the power falls below <span class="math inline">\(\alpha\)</span> on part of the alternative: that is, there are alternative values of <span class="math inline">\(\theta\)</span> for which our chance of rejecting the null is even less than it would be if the null were true.</p>
 <p>None of the tests plotted above is as powerful for <span class="math inline">\(\theta &gt; 0\)</span> as the right-tailed test (<span class="math inline">\(\alpha_1 = 0\)</span>), and none is as powerful for <span class="math inline">\(\theta &lt; 0\)</span> as the left-tailed test (<span class="math inline">\(\alpha_1 = \alpha\)</span>), and intuitively it is clear that we cannot hope to find a test that maximizes power on both parts of the alternative.</p>
 <p>As in the case with estimation, one way that we can proceed when there is no UMP test is to impose a constraint that rules out all but one test. In the <span class="math inline">\(z\)</span>-test above, the test with <span class="math inline">\(\alpha_1 = \alpha/2\)</span> is symmetric in two respects:</p>
@@ -286,15 +259,6 @@ c_1(\alpha_1) &amp;=-\log(1-\alpha_1), \quad\text{ and }\\
 c_2(\alpha_1) &amp;= -\log(\alpha_2)=-\log(\alpha-\alpha_1).
 \end{aligned}
 \]</span> If <span class="math inline">\(\alpha = 0.1\)</span> we obtain <span class="math inline">\(\alpha_1 = 0.080\)</span>, <span class="math inline">\(c_1 = 0.083\)</span>, and <span class="math inline">\(c_2 = 3.9\)</span> for the unbiased test, vs <span class="math inline">\(c_1 = 0.051\)</span> and <span class="math inline">\(c_2 = 3.0\)</span> for the equal-tailed test. The unbiased test is not as powerful for <span class="math inline">\(\theta &gt; 1\)</span>, but it is more powerful for <span class="math inline">\(\theta &lt; 1\)</span>, and its power is minimized at <span class="math inline">\(\alpha\)</span> when <span class="math inline">\(\theta = 1\)</span>. We plot both power curves below.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="testing-one-parameter_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
 </section>
 <section id="optimal-unbiased-tests" class="level3" data-number="3.3">
 <h3 data-number="3.3" class="anchored" data-anchor-id="optimal-unbiased-tests"><span class="header-section-number">3.3</span> Optimal unbiased tests</h3>
@@ -312,15 +276,6 @@ c_2(\alpha_1) &amp;= -\log(\alpha_2)=-\log(\alpha-\alpha_1).
 \]</span> Setting the last expression to 0 and massaging the equation a bit, we obtain <span class="math display">\[
 \EE_{\theta_0}T(X) = \frac{\EE_{\theta_0}[\phi(X)T(X)]}{\alpha} = \EE_{\theta_0}[T(X) \mid \phi(X) \text{ rejects } H_0].
 \]</span> Thus, the conditional expectation of <span class="math inline">\(T(X)\)</span> under the null, given that it falls in the rejection region, is the same as the marginal expectation. For instance, both the acceptance region and the rejection region for our unbiased test of <span class="math inline">\(H_0:\;\theta=1\)</span> in the exponential model share the same “balance point” at <span class="math inline">\(\EE_{1}X = 1\)</span>. Because the right lobe is farther out from 1, it has only about 1/4 as much probability mass as the right lobe.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="testing-one-parameter_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
 <p>Recall that when we restricted our attention to unbiased estimators, we were able to find a unique best unbiased estimator. Likewise, we can sometimes find an optimal two-sided test if we restrict our attention to unbiased tests. We say that <span class="math inline">\(\phi^*\)</span> is <em>UMP unbiased</em> (UMPU) if, for any other unbiased level <span class="math inline">\(\alpha\)</span> test <span class="math inline">\(\phi\)</span>, we have <span class="math inline">\(\beta_{\phi^*}(\theta) \geq \beta_{\phi}(\theta)\)</span> for all <span class="math inline">\(\theta \in \Theta_1\)</span>. UMPU tests exist, at least, for one-parameter exponential family models, as we show below.</p>
 <p><strong>Theorem (UMP Unbiased tests):</strong> Assume we want to test <span class="math inline">\(H_0:\;|\theta -\theta_0| \leq \delta\)</span> vs <span class="math inline">\(H_1:\;|\theta - \theta_0| &gt; \delta\)</span> in the model <span class="math inline">\(X \sim e^{\theta T(x)-A(\theta)}h(x)\)</span>, for <span class="math inline">\(\delta \geq 0\)</span> and <span class="math inline">\(\theta_0-\delta, \theta+\delta \in \Theta^\circ\)</span>, the interior of the parameter space. Suppose that the test <span class="math inline">\(\phi^*(X)\)</span> rejects for extreme values of <span class="math inline">\(T(X)\)</span>, with the cutoffs <span class="math inline">\(c_1,c_2,\gamma_1,\gamma_2\)</span> chosen so that</p>
 <ol type="1">
@@ -434,7 +389,7 @@ c_2(\alpha_1) &amp;= -\log(\alpha_2)=-\log(\alpha-\alpha_1).
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/ajay8005\.github\.io\/personal-website\/");
+        var filterRegex = new RegExp("https:\/\/ajay8005\.github\.io\/AS-Tutoring\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

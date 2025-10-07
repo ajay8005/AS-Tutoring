@@ -334,20 +334,6 @@ Caution
 <p>Frequentist analysis evades this question and substitutes another question in its place. Using the <code>R</code> function <code>binom.test</code>, we can test the null hypothesis that <span class="math inline">\(\theta = 0.5\)</span> and calculate a <span class="math inline">\(95\%\)</span> confidence interval for <span class="math inline">\(\theta\)</span>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.test</span>(<span class="at">x =</span> <span class="dv">178079</span>, <span class="at">n =</span> <span class="dv">350757</span>, <span class="at">p =</span> <span class="fl">0.5</span>, <span class="at">alternative =</span> <span class="st">"greater"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Exact binomial test
-
-data:  178079 and 350757
-number of successes = 178079, number of trials = 350757, p-value &lt;
-2.2e-16
-alternative hypothesis: true probability of success is greater than 0.5
-95 percent confidence interval:
- 0.5063091 1.0000000
-sample estimates:
-probability of success 
-             0.5076991 </code></pre>
-</div>
 </div>
 <p>The <span class="math inline">\(p\)</span>-value tells us the likelihood that we could observe as many same-side flips as we did, if <span class="math inline">\(\theta\)</span> really were <span class="math inline">\(0.5\)</span>. In this experiment the <span class="math inline">\(p\)</span>-value is so small (<span class="math inline">\(p &lt; 2.2\times 10^{-16}\)</span>) that <code>R</code> doesn’t bother to tell us its exact value. The probability involved in calculating the <span class="math inline">\(p\)</span>-value follows from our binomial assumptions, but most reasonable people would probably accept this as sufficient evidence to reject the null hypothesis; that is, to reach the inductive conclusion that <span class="math inline">\(\theta\)</span> is not really <span class="math inline">\(0.5\)</span>.</p>
 <p>This is a risky conclusion! Even if we were so conservative as to reject the null hypothesis only when <span class="math inline">\(p &lt; 10^{-10}\)</span>, say, there would still be some chance of our making a mistake in any given experiment. But we have quantified how likely this is, and we can decide whether it is high enough to trouble us.</p>
@@ -453,7 +439,7 @@ probability of success
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/ajay8005\.github\.io\/personal-website\/");
+        var filterRegex = new RegExp("https:\/\/ajay8005\.github\.io\/AS-Tutoring\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
